@@ -5,26 +5,39 @@
     font-family: "Rubik", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
 :root {
     --bg-color: #f4f6fa;
     --white: #fff;
     --purple-hover: rgba(167, 41, 245, 0.6);
+    --bg-span: #f4f6fa;
+    --color-span: #626c7f;
+    --purple: #a729f5;
+    --purple-hover: rgba(167, 41, 245, 0.7);
     --primary-text-color: #313e51;
     --secondary-text-color: #626c7f;
     --button-bg: #fff;
     --shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+    --shadow: 8px 16px 40 px 8px rgba(143, 168, 193, 0.14);
     --bg-html: #fff1e9;
     --bg-css: #e0fdef;
     --bg-javascript: #ebf0ff;
+    --bg-javascript: #ebf9ff;
     --bg-acessibilidade: #f6e7ff;
     --purple: #a729f5;
     --gren: #26d782;
+    --white: #fff;
+    --green: #26d782;
     --red: #ee5454;
     --bg-mobile: url(../../assets/images/pattern-background-mobile-light.svg);
     --bg-desktop: url(../../assets/images/pattern-background-desktop-light.svg);
+
+
 }
+
 body.escuro {
     --bg-color: #313e51;
+    --color-span: #313e51;
     --bg-mobile: url(../../assets/images/pattern-background-mobile-dark.svg);
     --bg-desktop: url(../../assets/images/pattern-background-desktop-dark.svg);
     --primary-text-color: #fff;
@@ -38,11 +51,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 header{
+header {
     display: flex;
     justify-content: space-between;
 padding: 16px 24px;
+    padding: 16px 24px;
 }
+
 .assunto {
     display: flex;
     align-items: center;
@@ -62,16 +79,22 @@ padding: 16px 24px;
     font-size: 18px;
     font-weight: 500;
     color:var(--primary-text-color);
+    color: var(--primary-text-color);
 }
+
 .tema {
     padding: 8px 0;
     display: flex;
     align-items: center;
     gap: 8px;
+
 }
+
 .tema img {
     width: 16px;
+
 }
+
 .tema button {
     height: 20px;
     width: 32px;
@@ -79,13 +102,19 @@ padding: 16px 24px;
     border: 0;
     border-radius: 999px;
     padding: 4px;
+
+    display: flex;
+    cursor: pointer;
 }
+
 .tema button div {
     background: var(--white);
     width: 12px;
     height: 12px;
     border-radius: 999px;
+    border-radius: 999px
 }
+
 main {
     padding: 32px 24px;
 }
@@ -104,7 +133,9 @@ main {
     color: var(--primary-text-color);
     line-height: 24px;
     margin-bottom: 24px;
+
 }
+
 .barra_progresso {
     background: var(--button-bg);
     height: 16px;
@@ -117,10 +148,12 @@ main {
     background: var(--purple);
     border-radius: 999px;
 }
+
 .alternativas form {
     display: flex;
     gap: 12px;
     flex-direction: column;
+    gap: 12px;
     font-size: 18px;
     margin-bottom: 12px;
 }
@@ -129,7 +162,9 @@ main {
     display: flex;
     align-items: center;
     gap: 16px;
+
 }
+
 .alternativas label {
     display: block;
     background: var(--button-bg);
@@ -147,21 +182,30 @@ main {
     & span {
     background: var(--bg-acessibilidade);
     color: var(--purple);
+        background: var(--bg-acessibilidade);
+        color: var(--purple);
     }
 }
 
 .alternativas label:has(input:checked){
+.alternativas label:has(input:checked) {
     outline: 3px solid var(--purple);
 
     & span {
     background: var(--purple);
     color: var(--white);
+        background: var(--purple);
+        color: var(--white);
     }
 }
+
 .alternativas label#correta {
     outline: 3px solid var(--gren);
+    outline: 3px solid var(--green);
+
     & span {
         background: var(--gren);
+        background: var(--green);
         color: var(--white);
     }
 }
@@ -172,14 +216,30 @@ main {
         color: var(--white);
     }
 }
+
 .alternativas input {
+.alternativas input{
     display: none;
 }
+
+.alternativas div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+
+}
+
 .alternativas div span {
    display: block;
+    display: block;
     width: 40px;
     height: 40px;
     background: var(--bg-color);
+    background: var(--bg-span);
+    border-radius: 5px;
+    color: var(--color-span);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,6 +247,7 @@ main {
     color: var(--secondary-text-color);
     flex-shrink: 0;
 }
+
 .alternativas button {
     padding: 16px;
     border-radius: 12px;
@@ -194,6 +255,7 @@ main {
     background: var(--purple);
     color: var(--white);
     width: 100%;
+
     font-size: 18px;
     font-weight: 500;
     transition: background 0.3s;
@@ -202,9 +264,16 @@ main {
 .alternativas button:hover {
     background: var(--purple-hover);
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 @media(min-width: 1100px) {
+    body{
+        background: var(--bg-desktop) var(--bg-color);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     header {
         margin-block: 81px;
         max-width: 1160px;
@@ -219,6 +288,7 @@ main {
         font-size: 28px;
     }
    
+
     .tema {
         gap: 16px;
     }
@@ -233,23 +303,13 @@ main {
         width: 20px;
         height: 20px;
     }
-
-main {
-    max-width: 1160px;
-    margin-inline: auto;
-    display: flex;
-    gap: 130px;
-}
     main {
         max-width: 1160px;
         margin-inline: auto;
+
         display: flex;
         gap: 130px;
     }
-
-section {
-    width: 100%;
-}
     section {
         width: 100%;
     }
@@ -259,34 +319,163 @@ section {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .pergunta p {
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 27px;
 }
+
 .pergunta h2 {
     font-size: 36px;
     line-height: 42px;
 }
+    .pergunta {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
 .alternativas form {
 gap: 24px;
 margin-bottom: 24px;
 }
+    .pergunta p {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 27px;
+    }
+
 .alternativas label {
     font-size: 22px;
     padding: 18px 20px;
     border-radius: 24px;
 }
+    .pergunta h2 {
+        font-size: 36px;
+        line-height: 42px;
 
 .alternativas div { 
     gap: 32px;
+    }
+
 }
+    .alternativas form {
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
 .alternativas div span {
     width: 56px;
     height: 56px;
     font-size: 28px;
+    .alternativas label {
+        font-size: 22px;
+        padding: 18px 20px;
+        border-radius: 24px;
+    }
+
 }
+    .alternativas div {
+        gap: 32px;
+    }
+
 .alternativas button {
     font-size: 22px;
 }
+    .alternativas div span {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+
+    .alternativas button {
+        font-size: 22px;
+    }
 }
+  27 changes: 14 additions & 13 deletions27  
+pages/quiz/quiz.html
+Original file line number	Diff line number	Diff line change
+@@ -1,29 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Quiz App</title>
+    <script src="./quiz.js" type="module" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="assunto">
+            <dic class="assunto_icone">
+            <div class="assunto_icone">
+                <img src="../../assets/images/icon-accessibility.svg" alt="icone da Accessibilidade">
+            </dic>
+
+            </div>
+            <h1>Acessibilidade</h1>
+        </div>
+
+        <div class="tema">
+            <img src="../../assets/images/icon-sun-dark.svg" alt="icone do sol">
+            <img src="../../assets/images/icon-sun-dark.svg" alt="Icone do sol">
+            <button>
+                <div></div>
+            </button>
+@@ -43,7 +40,7 @@ <h2>Qual o significado de HTML?</h2>
+            </div>
+        </section>
+
+        <secction class="alternativas">
+        <section class="alternativas">
+            <form action="">
+                <label for="alternativa_a" id="correta">
+                    <input type="radio" id="alternativa_a" name="alternativa">
+@@ -56,30 +53,34 @@ <h2>Qual o significado de HTML?</h2>
+
+                <label for="alternativa_b" id="errada">
+                    <input type="radio" id="alternativa_b" name="alternativa">
+
+                    <div>
+                        <span>B</span>
+                        Hyper Text Marketing Language
+                    </div>
+                </label>
+
+                <label for="alternativa_c">
+                    <input type="radio" id="alternativa_c" name="alternativa">
+
+                    <div>
+                        <span>C</span>
+                        Hyper Text Markup Language
+                    </div>
+                </label>
+
+                <label for="alternativa_d">
+                    <input type="radio" id="alternativa_d" name="alternativa">
+
+                    <div>
+                        <span>D</span>
+                        Hyper Text Markup Leveler
+                    </div>
+                </label>
+
+            </form>
+
+            <button>Enviar</button>
+        </secction>
+        </section>
+    </main>
+</body>
+
+</html>

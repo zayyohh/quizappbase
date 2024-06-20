@@ -57,12 +57,9 @@ header {
     padding: 5px;
     border-radius: 5px;
 }
-
-.assunto_icone html {
 .assunto_icone.html {
     background: var(--bg-html);
 }
-
 .assunto_icone.css {
     background: var(--bg-css);
 }
@@ -133,7 +130,7 @@ main {
 
 .barra_progresso div {
     height: 100%;
-    width: 60%;
+    height: 100%;Z
     background: var(--purple);
     border-radius: 999px;
 }

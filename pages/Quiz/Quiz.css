@@ -14,7 +14,6 @@
     --primary-text-color: #313e51;
     --secondary-text-color: #626c7f;
     --button-bg: #fff;
-    --shadow: 8px 16px 40 px 8px rgba(143, 168, 193, 0.14);
     --shadow: 8px 16px 40px 8px rgba(143, 160, 193, 0.14);
     --bg-html: #fff1e9;
     --bg-css: #e0fdef;
@@ -52,6 +51,7 @@ header {
     align-items: center;
     gap: 16px;
 }
+
 .assunto_icone {
     background: var(--bg-acessibilidade);
     width: 40px;
@@ -59,6 +59,23 @@ header {
     padding: 5px;
     border-radius: 5px;
 }
+
+.assunto_icone html {
+    background: var(--bg-html);
+}
+
+.assunto_icone.css {
+    background: var(--bg-css);
+}
+
+.assunto_icone.javascript {
+    background: var(--bg-javascript);
+}
+
+.assunto_icone.acessibilidade {
+    background: var(--bg-acessibilidade);
+}
+
 .assunto_icone img {
     width: 100%;
 }

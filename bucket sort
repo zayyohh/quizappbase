@@ -1,0 +1,38 @@
+def bucket_sort(arr):
+    """
+    Realiza o Bucket Sort em uma lista de números em ponto flutuante no intervalo [0, 1).
+    """
+    n = len(arr)
+    # Se a lista estiver vazia, retorna a lista vazia
+    if n == 0:
+        return arr
+
+    # Cria os baldes
+    buckets = [[] for _ in range(n)]
+
+    # Distribui os elementos nos baldes
+    for num in arr:
+        index = min(int(n * num), n - 1)  # Garantir que o índice esteja dentro do intervalo válido
+        buckets[index].append(num)
+
+    # Ordena os elementos em cada balde
+    for bucket in buckets:
+        bucket.sort()  # Aqui você pode otimizar com outro algoritmo se necessário
+
+    # Junta os baldes
+    sorted_arr = []
+    for bucket in buckets:
+        sorted_arr.extend(bucket)
+
+    return sorted_arr
+
+# Exemplo de uso:
+arr = [0.78, 0.17, 0.39, 0.26, 0.72, 0.94, 0.21, 0.12, 0.23, 0.68]
+sorted_arr = bucket_sort(arr)
+print(f"Lista ordenada: {sorted_arr}")
+
+
+
+
+
+Lista ordenada: [0.12, 0.17, 0.21, 0.23, 0.26, 0.39, 0.68, 0.72, 0.78, 0.94]

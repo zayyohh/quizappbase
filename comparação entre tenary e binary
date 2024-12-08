@@ -1,0 +1,40 @@
+ Comparação entre Ternary Search e Binary Search
+ 1.Divisão do intervalo:
+ Binary Search
+ : Divide o intervalo ao meio, reduzindo a busca a duas sublistas.
+Ternary Search
+ : Divide o intervalo em três partes, com base em dois pontos médios.
+ 2.Desempenho
+ :
+ Ambos os algoritmos têm uma complexidade de tempo 
+O(log n)
+ , mas o 
+Ternary Search
+ geralmente realiza mais comparações por iteração (2 comparações), enquanto o 
+Binary Search
+ realiza apenas uma comparação. No entanto, a diferença de desempenho entre os dois é
+ mínima e, para listas grandes, os tempos de execução são muito semelhantes.
+ 3.Situações em que o Ternary Search seria mais e ciente
+ :
+ O 
+Ternary Search
+ pode ser mais eficiente em termos de 
+redução do número de elementos a
+ serem pesquisados
+ se o custo das comparações for muito alto, já que ele potencialmente reduz
+ o espaço de busca mais rapidamente, dividindo em três em vez de dois. Porém, na prática, a
+ diferença de desempenho é geralmente insignificante em termos de tempo.
+ Se as operações de comparação forem muito caras ou se estivermos lidando com listas de
+ tamanhos muito grandes e precisarmos de uma redução mais rápida do intervalo de pesquisa, o
+ Ternary Search
+ pode, em alguns casos, oferecer um leve benefício.
+ 4.Limitações:
+ A vantagem de 
+Ternary Search
+ sobre 
+Binary Search
+ em termos de complexidade de tempo é
+ muito marginal, então em implementações típicas, o 
+Binary Search
+ é preferido devido à
+ simplicidade e ao menor número de comparações

@@ -1,0 +1,77 @@
+import random
+import time
+
+# Função de ordenação Selection Sort
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        # Encontrar o menor valor na sublista não ordenada
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        # Trocar o valor encontrado com o primeiro valor da sublista não ordenada
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+        # Mostrar o estado da lista após cada troca (descomente se quiser ver os passos)
+        # print(f"Passo {i+1}: {arr}")
+
+# Função para medir o tempo de execução e ordenar listas de diferentes tamanhos
+def test_selection_sort():
+    # Criando listas de diferentes tamanhos
+    small_list = random.sample(range(1, 101), 10)   # Lista pequena (10 elementos)
+    medium_list = random.sample(range(1, 1001), 100)  # Lista média (100 elementos)
+    large_list = random.sample(range(1, 10001), 1000)  # Lista grande (1000 elementos)
+
+    # Testando para a lista pequena
+    print("Lista pequena original:", small_list)
+    start_time = time.time()
+    selection_sort(small_list)
+    end_time = time.time()
+    print("Lista pequena ordenada:", small_list)
+    print(f"Tempo de execução para lista pequena: {end_time - start_time:.6f} segundos\n")
+
+    # Testando para a lista média
+    print("Lista média original:", medium_list[:10], "...")  # Exibindo apenas os primeiros 10 elementos
+    start_time = time.time()
+    selection_sort(medium_list)
+    end_time = time.time()
+    print("Lista média ordenada:", medium_list[:10], "...")  # Exibindo os primeiros 10 elementos da lista ordenada
+    print(f"Tempo de execução para lista média: {end_time - start_time:.6f} segundos\n")
+
+    # Testando para a lista grande
+    print("Lista grande original:", large_list[:10], "...")  # Exibindo apenas os primeiros 10 elementos
+    start_time = time.time()
+    selection_sort(large_list)
+    end_time = time.time()
+    print("Lista grande ordenada:", large_list[:10], "...")  # Exibindo os primeiros 10 elementos da lista ordenada
+    print(f"Tempo de execução para lista grande: {end_time - start_time:.6f} segundos\n")
+
+# Executando o teste
+test_selection_sort()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lista pequena original: [52, 6, 10, 28, 36, 69, 8, 12, 37, 64]
+Lista pequena ordenada: [6, 8, 10, 12, 28, 36, 37, 52, 64, 69]
+Tempo de execução para lista pequena: 0.000017 segundos
+
+Lista média original: [410, 346, 209, 247, 383, 533, 850, 742, 732, 788] ...
+Lista média ordenada: [30, 32, 42, 53, 75, 79, 91, 115, 136, 156] ...
+Tempo de execução para lista média: 0.000595 segundos
+
+Lista grande original: [8690, 148, 4368, 5319, 5063, 5654, 4882, 5483, 1214, 2] ...
+Lista grande ordenada: [9, 24, 37, 44, 46, 51, 63, 68, 80, 99] ...
+Tempo de execução para lista grande: 0.050863 segundos

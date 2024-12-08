@@ -1,0 +1,50 @@
+def counting_sort(arr, exp):
+    """
+    Subrotina para o Radix Sort que realiza o Counting Sort com base em um dígito específico.
+    """
+    n = len(arr)
+    output = [0] * n  # Lista para armazenar a saída ordenada
+    count = [0] * 10  # Lista para contar as ocorrências de cada dígito (0 a 9)
+
+    # Conta as ocorrências de cada dígito
+    for i in range(n):
+        index = (arr[i] // exp) % 10
+        count[index] += 1
+
+    # Atualiza count para refletir as posições acumuladas
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+
+    # Constrói a saída com base no dígito atual
+    i = n - 1
+    while i >= 0:
+        index = (arr[i] // exp) % 10
+        output[count[index] - 1] = arr[i]
+        count[index] -= 1
+        i -= 1  # Decrementa o valor de i
+
+    # Atualiza o array original com a saída ordenada
+    for i in range(n):
+        arr[i] = output[i]
+
+def radix_sort(arr):
+    """
+    Realiza o Radix Sort em uma lista de números inteiros.
+    """
+    max_val = max(arr)  # Encontra o valor máximo para saber o número de dígitos
+    exp = 1  # Começa pelo dígito menos significativo
+
+    # Ordena cada dígito, começando pelo menos significativo
+    while max_val // exp > 0:
+        counting_sort(arr, exp)  # Chama o Counting Sort para ordenar pelo dígito
+        exp *= 10  # Aumenta o dígito para o próximo
+
+    return arr
+
+# Exemplo de uso:
+arr = [170, 45, 75, 90, 802, 24, 2, 66]
+sorted_arr = radix_sort(arr)
+print(f"Lista ordenada: {sorted_arr}")
+
+
+Lista ordenada: [2, 24, 45, 66, 75, 90, 170, 802]

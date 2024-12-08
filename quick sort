@@ -1,0 +1,48 @@
+def quick_sort(arr, pivot_strategy="last"):
+    """
+    Realiza o Quick Sort em uma lista.
+    pivot_strategy: Define a estratégia de escolha do pivô ('first', 'last', 'middle').
+    """
+    if len(arr) <= 1:
+        return arr
+
+    # Função de particionamento in-place
+    def partition(arr, low, high, pivot_strategy):
+        # Escolha do pivô
+        if pivot_strategy == "first":
+            arr[low], arr[low] = arr[low], arr[low]  # Pivô é o primeiro elemento
+        elif pivot_strategy == "middle":
+            mid = (low + high) // 2
+            arr[mid], arr[high] = arr[high], arr[mid]  # Pivô é o elemento do meio
+        else:  # 'last'
+            arr[high], arr[high] = arr[high], arr[high]  # Pivô é o último elemento
+
+        pivot = arr[high]  # O pivô é o elemento no índice 'high'
+        i = low - 1
+
+        for j in range(low, high):
+            if arr[j] < pivot:
+                i += 1
+                arr[i], arr[j] = arr[j], arr[i]
+
+        arr[i + 1], arr[high] = arr[high], arr[i + 1]  # Coloca o pivô na posição correta
+        return i + 1  # Retorna o índice do pivô
+
+    # Função recursiva que chama a partição
+    def quick_sort_recursive(arr, low, high, pivot_strategy):
+        if low < high:
+            pi = partition(arr, low, high, pivot_strategy)
+            quick_sort_recursive(arr, low, pi - 1, pivot_strategy)  # Recursivamente ordena a sublista à esquerda
+            quick_sort_recursive(arr, pi + 1, high, pivot_strategy)  # Recursivamente ordena a sublista à direita
+
+    # Chama a função recursiva com a lista inteira
+    quick_sort_recursive(arr, 0, len(arr) - 1, pivot_strategy)
+    return arr
+
+# Exemplo de uso com novos valores:
+arr = [50, 23, 78, 35, 12, 90, 56]
+sorted_arr = quick_sort(arr, pivot_strategy="middle")
+print(f"Lista ordenada: {sorted_arr}")
+
+
+Lista ordenada: [12, 23, 35, 50, 56, 78, 90]

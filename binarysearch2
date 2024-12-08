@@ -1,0 +1,22 @@
+def binary_search(lista, elemento):
+    esquerda = 0
+    direita = len(lista) - 1
+
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        # Verifique se o elemento foi encontrado
+        if lista[meio] == elemento:
+            return meio  # Retorna o índice do elemento
+        # Ajuste a busca para a metade esquerda ou direita
+        elif lista[meio] < elemento:
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+
+    return -1  # Retorna -1 se o elemento não for encontrado
+
+# Exemplo de uso:
+lista = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+elemento = 12
+resultado = binary_search(lista, elemento)
+print(f"O índice do elemento {elemento} é: {resultado}")

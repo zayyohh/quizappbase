@@ -1,0 +1,36 @@
+ def merge_sort_strings(arr):
+ if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+        merge_sort_strings(left)
+        merge_sort_strings(right)
+        i = j = k = 0
+ while i < len(left) and j < len(right):
+ = left[i]
+ if left[i].lower() < right[j].lower():  # Comparando palavras em ordem alfabé
+                arr[k]
+                i += 
+else:
+ 1
+                arr[k]
+                j += 
+            k += 
+1
+ 1
+ = right[j]
+ while i < len(left):
+            arr[k]
+ = left[i]
+            i += 
+            k += 
+1
+ 1
+while j < len(right):
+            arr[k]
+ = right[j]
+            j += 
+            k += 
+return arr
+ 1
+ 

@@ -1,0 +1,73 @@
+ Para implementar a busca de um livro específico por 
+ISBN
+ em uma lista ordenada de registros
+ de biblioteca usando 
+Binary Search
+ , vamos criar um exemplo prático. Suponha que temos uma
+ lista de dicionários, onde cada dicionário representa um livro, e o 
+ISBN
+ é a chave para identificar
+ de forma única cada livro.
+ Estrutura dos Registros:
+ Cada livro pode ser representado como um dicionário com as chaves ISBN, Título, Autor, e Ano.
+ Exemplo de Implementação:
+ De nição da Função de Binary Search
+ Exemplo de Registros de Livros
+ Busca de um Livro por ISBN
+ Código:
+ # Definir a função Binary Search para procurar o livro pelo ISBN
+ def binary_search_books(books, target_isbn):
+    low, high = 0, len(books) - 1
+ while low <= high:
+        mid = (low + high) // 2
+        mid_isbn = books[mid]["ISBN"]
+ if mid_isbn == target_isbn:
+ return books[mid]  # Retorna o livro encontrado
+ elif mid_isbn < target_isbn:
+            low = mid + 1
+ else:
+            high = mid - 1
+ return None  # Retorna None se o livro não for encontrado
+ # Exemplo de lista de livros (ordenada por ISBN)
+ library = [
+ {"ISBN": "978-0-123456-47-2", "Título": "Livro A", "Autor": "Autor A", "Ano": 2020},
+ {"ISBN": "978-0-223456-47-5", "Título": "Livro B", "Autor": "Autor B", "Ano": 2021},
+ {"ISBN": "978-0-323456-47-8", "Título": "Livro C", "Autor": "Autor C", "Ano": 2022},
+ {"ISBN": "978-0-423456-47-1", "Título": "Livro D", "Autor": "Autor D", "Ano": 2023},
+ {"ISBN": "978-0-523456-47-9", "Título": "Livro E", "Autor": "Autor E", "Ano": 2019},
+ ]
+ # Exemplo de ISBN que desejamos buscar
+ isbn_to_find = "978-0-323456-47-8"
+ # Ordenar a lista por ISBN (caso não esteja ordenada)
+ library.sort(key=lambda x: x["ISBN"])
+ # Buscar o livro pelo ISBN
+ book = binary_search_books(library, isbn_to_find)
+ # Exibir o resultado
+ if book:
+ print(f"Livro encontrado: {book['Título']} ({book['ISBN']})")
+ else:
+ print(f"Livro com ISBN {isbn_to_find} não encontrado.")
+ Explicação:
+ binary_search_books: Esta função realiza uma busca binária na lista de livros, verificando o
+ ISBN
+ de cada livro para encontrar o correspondente ao ISBN fornecido.
+ Ordenação dos livros
+ : A lista de livros é ordenada pelo 
+ISBN
+ para garantir que a busca binária
+ funcione corretamente.
+ Entrada
+ : Um ISBN específico é fornecido e a função retorna o livro correspondente ou None se
+ não encontrado.
+ Exemplo de Saída:
+ Livro encontrado: Livro C (978-0-323456-47-8)
+ Complexidade:
+ Tempo
+ : A busca binária tem complexidade 
+O(logn)
+ , onde n é o número de livros na lista.
+ Espaço
+ : A complexidade de espaço é 
+O(1)
+ , já que estamos apenas usando a lista de livros e
+ realizando comparações diretas.

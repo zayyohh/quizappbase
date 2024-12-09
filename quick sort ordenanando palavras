@@ -1,0 +1,15 @@
+ef quick_sort_strings(arr):
+ if len(arr) <= 1:
+ return arr
+    pivot = arr[len(arr) // 2]
+    left = []
+    right = []
+    equal = []
+ for word in arr:
+ if word.lower() < pivot.lower():  # Comparando palavras em ordem alfabética
+            left.append(word)
+ elif word.lower() == pivot.lower():
+            equal.append(word)
+ else:
+            right.append(word)
+ return quick_sort_strings(left) + equal + quick_sort_strings(right)

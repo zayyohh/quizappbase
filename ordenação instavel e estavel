@@ -1,0 +1,62 @@
+ Algoritmos de Ordenação Estáveis
+ 1. Merge Sort
+ : O Merge Sort é um algoritmo estável. Quando dois elementos com valores iguais
+ são encontrados, o algoritmo mantém a ordem relativa deles.
+ Exemplo
+ : Se tivermos a lista [2a, 2b, 1], ao ordenar, ela se torna [1, 2a, 2b]. Note que 2a e 2b
+ permanecem na mesma ordem em relação um ao outro.
+ 2. Bubble Sort
+ : O Bubble Sort é um algoritmo estável. Quando dois elementos são iguais, ele
+ não altera a ordem deles.
+ Exemplo
+ : A lista [2a, 2b, 1] seria ordenada como [1, 2a, 2b], mantendo a ordem de 2a e 2b.
+ 3. Insertion Sort
+ : O Insertion Sort também é estável, pois mantém a ordem dos elementos
+ iguais durante a ordenação.
+ Exemplo
+ : Para [2a, 2b, 1], a ordenação resultaria em [1, 2a, 2b].
+4. Bucket Sort
+ (
+ em algumas implementações
+ ): O Bucket Sort pode ser estável, dependendo de
+ como os elementos são distribuídos nos baldes e ordenados dentro de cada balde (geralmente,
+ se usar um algoritmo estável para ordenar dentro de cada balde).
+ Exemplo
+ : Com a lista [2a, 2b, 1], se cada balde for ordenado usando um algoritmo estável, a lista
+ f
+ inal será [1, 2a, 2b].
+ 5. Radix Sort
+ : O Radix Sort é estável, pois ele classifica os números baseados em dígitos
+ individuais (da ordem mais baixa para a mais alta), e a ordenação de dígitos individuais é feita
+ de forma estável, preservando a ordem relativa dos elementos com o mesmo valor.
+ Exemplo
+ : Entrada: [4a, 3, 4b, 1] Após a ordenação (Radix Sort): [1, 3, 4a, 4b]
+ Algoritmos de Ordenação Instáveis
+ 1. Quick Sort
+ : O Quick Sort é instável. Quando elementos com valores iguais estão em posições
+ diferentes, a ordem relativa entre eles pode ser alterada.
+ Exemplo
+ : Com a lista [2a, 2b, 1], o Quick Sort pode colocar 2a e 2b em posições diferentes,
+ tornando a ordenação como [1, 2b, 2a] (a ordem de 2b e 2a foi alterada).
+ 2. Selection Sort
+ : O Selection Sort também é instável, pois pode alterar a ordem relativa dos
+ elementos iguais durante o processo de seleção do menor ou maior valor.
+ Exemplo
+ : A lista [2a, 2b, 1] poderia ser ordenada como [1, 2b, 2a], alterando a ordem de 2a e 2b.
+ 3. Shell Sort
+ : O Shell Sort, dependendo da implementação do intervalo (gap) utilizado, pode ser
+ instável.
+ Exemplo
+ : Com a lista [2a, 2b, 1], o Shell Sort pode reordenar os elementos e mudar a posição de
+ 2a e 2b, produzindo algo como [1, 2b, 2a].
+ 4. Exponential Search
+ : O Exponential Search não é um algoritmo de ordenação. Ele é usado para
+ encontrar a posição de um valor em uma lista ordenada, então a questão de estabilidade não se
+ aplica diretamente.
+ 5. Binary Search
+ : Assim como o Exponential Search, o Binary Search é um algoritmo de busca
+ em listas já ordenadas, e não um algoritmo de ordenação, logo a questão de estabilidade
+ também não se aplica aqui.
+ 6. Jump Search
+ : O Jump Search também é um algoritmo de busca e não um algoritmo de
+ ordenação, portanto, a estabilidade não é uma característica relevante.
